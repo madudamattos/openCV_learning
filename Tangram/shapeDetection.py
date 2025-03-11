@@ -1,6 +1,6 @@
 import cv2
 
-img = cv2.imread('Assets/partialimg.jpeg')
+img = cv2.imread('Assets/formas.png')
 
 gray_img = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 
@@ -25,12 +25,12 @@ for i, contour in enumerate(contours):
     colour = (0,0,0)
     font = cv2.FONT_HERSHEY_DUPLEX
     
-    # if len(approx) == 3:
-    #     cv2.putText(img, "Triangle", coords, font, 1, colour, 1)
-    # elif len(approx) == 4:
-    #     cv2.putText(img, "Rectangle", coords, font, 1, colour, 1)
-    # else:
-    #     cv2.putText(img, "Circle", coords, font, 1, colour, 1)
+    if len(approx) == 3:
+        cv2.putText(img, "Triangle", coords, font, 1, colour, 1)
+    elif len(approx) == 4:
+        cv2.putText(img, "Rectangle", coords, font, 1, colour, 1)
+    else:
+        cv2.putText(img, "Circle", coords, font, 1, colour, 1)
 
 
 cv2.imshow('Image', img)

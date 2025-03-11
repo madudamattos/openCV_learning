@@ -1,10 +1,10 @@
 import numpy as np
 import cv2
 
-img = cv2.imread('Assets/partialimg.jpeg')
+img = cv2.imread('Assets/formas.png')
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-corners = cv2.goodFeaturesToTrack(gray, 100, 0.03, 20)
+corners = cv2.goodFeaturesToTrack(gray, 100, 0.04, 20)
 #parâmetros: image, numero de quinas, minimum quality (o quao confiavel é a quina, minima distancia entre quinas(bom para cantos arredondados por exemplo))
 
 corners = np.int_(corners)
